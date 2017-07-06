@@ -12,7 +12,7 @@ boxplot(wt, main='boxplot of wt')
 par(opar)})
 
 
-# using layout() function
+# using layout() function,matrix(c()) is the order to put the plot. byrow is TRUE means that plots are filled in the matrix by row
 #layout()函数中，矩阵的设置，后面的2,2 是2乘以2矩阵，前面的matrix里面的四个数，就是按行
 #填充时候的填充元素，第一象限填充第一个绘图，第二象限也是第一个绘图
 #第三象限是第二个绘图，第四象限是第三个绘图
