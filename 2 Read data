@@ -1,0 +1,7 @@
+# for reading csv form data, using / as separator
+#csv格式文件，地址栏要用反斜杠
+
+mydataframe1 <- read.csv("C:/Users/Sun/Desktop/rexer.csv")
+summary(mydataframe1)
+
+#for excel form data, we can convert into csv format
