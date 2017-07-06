@@ -1,0 +1,42 @@
+#this Hmisc package is for adding minor tick  
+#添加次要刻度线，需要用到Hmisc包中的minor.tick()函数
+
+install.packages('Hmisc')
+
+dose <- c(20,30,40,45,60)
+drugA <- c(16,20,27,40,60)
+drugB <- c(15,18,25,31,40)
+
+
+#type='b',plot dot and line simutaneously,xlim is length of x axis, main is the main title,sub is sub title,xlab is the lable of x axis
+#type='b',同时绘制点线图,xlim 是x轴的长度，main是主标题，sub是副标题。xlab是X轴标题
+
+plot(dose,drugA, type='b',pch=15,lty=1,lwd=2,col='red',ylim=c(0,60),xlim=c(0,60),xlab='Drug Dosage',
+     ylab='Drug response',main='Clinical Trials for DrugA',sub='This is hypothertical data')
+ 
+ 
+#lines is for another variant，here is drugB
+# lines 可以加drugB的线。
+
+lines(dose,drugB,type='b',pch=17,col='green',lty=2,lwd=2)
+
+# abline is for reference line, h is for y axis,v is for x axis.
+# abline 是加参考线，abline=(h=yvalues,v=xvalues)
+
+abline(h=c(30,40,50),lwd=2,lty=2,col='maroon')
+
+# add minor tick, we need to use minor.tick(), this is included in Hmisc package.
+#添加次要刻度线，需要用到Hmisc包中的minor.tick()函数
+#minor.tick(nx=n,ny=n,tick.ratio=n)
+#tick.ratio是次要刻度线长度相对于主刻度线的比例
+
+library(Hmisc)
+minor.tick(nx=2,ny=2,tick.ratio=1.2)
+
+
+#to add legend, we use legend(), legend(location,title,legend,...)
+#添加图例，需要用到legend()函数.legend(location,title,legend,...)
+
+legend('topright',inset=.08,title='drug type',c('A','B'),pch=c(15,17),lty=c(1,2),lwd=c(1,2),col=c('red','green'))
+
+
